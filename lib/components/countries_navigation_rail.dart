@@ -7,12 +7,12 @@ import 'package:provider/provider.dart';
 
 import '../main.dart';
 import '../pages/homepage.dart';
+import '../settings.dart';
 
 Future<http.Response> getCountryDetails(String country2AlphaCode) {
   print("Call Fancy Details");
   return http.post(
-      Uri.parse(
-          'http://192.168.1.11:7000/dgcnect/country_details/$country2AlphaCode'),
+      Uri.parse('${DGCNECT_BACKEND_URL}/country_details/$country2AlphaCode'),
       headers: {'Access-Control-Allow-Origin': '*'});
 }
 
@@ -20,7 +20,7 @@ Future<http.Response> getGlobalDetails(String country2AlphaCode) {
   print("Call Global Details");
   return http.post(
       Uri.parse(
-          'http://192.168.1.11:7000/dgcnect/global_explanation/$country2AlphaCode'),
+          '${DGCNECT_BACKEND_URL}/dgcnect/global_explanation/$country2AlphaCode'),
       headers: {'Access-Control-Allow-Origin': '*'});
 }
 

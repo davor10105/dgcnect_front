@@ -1,0 +1,1 @@
+String DGCNECT_BACKEND_URL = 'http://192.168.115.229:7000';

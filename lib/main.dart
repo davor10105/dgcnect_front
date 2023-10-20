@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:country_flags/country_flags.dart';
+import 'package:dgcnect_app/settings.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -47,8 +48,7 @@ enum Pages { HOMEPAGE }
 
 Future<http.Response> getSupportedCountries() {
   print("Getting supported countries");
-  return http.get(
-      Uri.parse('http://192.168.115.229:7000/dgcnect/countries_data'),
+  return http.get(Uri.parse('${DGCNECT_BACKEND_URL}/dgcnect/countries_data'),
       headers: {'Access-Control-Allow-Origin': '*'});
 }
 
